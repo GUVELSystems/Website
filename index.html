@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GUVEL | Smarter Industrial Systems</title>
-<meta name="description" content="GUVEL desarrolla sistemas digitales prácticos para organizaciones industriales: calidad, operaciones y mejora continua conectadas.">
+<meta name="description" content="GUVEL: cinco sistemas conectados para la industria. Operación, calidad, documentos, calibración y proyectos.">
 <link rel="icon" href="assets/guvel-mark.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0f1b2d">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GUVEL | Smarter Industrial Systems">
-<meta property="og:description" content="Sistemas digitales prácticos para organizaciones industriales: calidad, operaciones y mejora continua conectadas.">
+<meta property="og:description" content="Cinco sistemas conectados para la industria: operación, calidad, documentos, calibración y proyectos.">
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,36 +21,32 @@
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="g" viewBox="20 20 1356 1556">
+<polygon style="fill:var(--m-cy)" points="1336,801 727,801 663,909 939,1071 965,1056 965,967 858,903 1336,903"/>
+<polygon style="fill:var(--m-cy)" points="138,357 138,475 397,325 600,445 345,594 345,713 701,505 1008,682 1362,479 1361,417 702,30 600,89 1209,448 1006,564 398,207"/>
+<polygon style="fill:var(--m-so)" points="1335,904 1233,904 1231,1141 599,1504 702,1563 1334,1200"/>
+<polygon style="fill:var(--m-so)" points="34,417 34,1176 400,1383 937,1072 836,1012 700,1091 449,947 448,654 346,714 346,1006 597,1150 398,1266 138,1118 136,358"/>
+</symbol></defs></svg>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="g" viewBox="20 20 1356 1556">
-      <polygon style="fill:var(--m-cy)" points="1336,801 727,801 663,909 939,1071 965,1056 965,967 858,903 1336,903"/>
-      <polygon style="fill:var(--m-cy)" points="138,357 138,475 397,325 600,445 345,594 345,713 701,505 1008,682 1362,479 1361,417 702,30 600,89 1209,448 1006,564 398,207"/>
-      <polygon style="fill:var(--m-so)" points="1335,904 1233,904 1231,1141 599,1504 702,1563 1334,1200"/>
-      <polygon style="fill:var(--m-so)" points="34,417 34,1176 400,1383 937,1072 836,1012 700,1091 449,947 448,654 346,714 346,1006 597,1150 398,1266 138,1118 136,358"/>
-    </symbol>
-  </defs>
-</svg>
-
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="GUVEL inicio">
-      <svg class="mark" aria-hidden="true"><use href="#g"/></svg>
-      <div><b>GUVEL</b><span data-i18n="brandSub">Smarter Industrial Systems</span></div>
+    <a class="brand" href="#top" aria-label="GUVEL">
+      <svg aria-hidden="true"><use href="#g"/></svg>
+      <span><b>GUVEL</b><small>Smarter Industrial Systems</small></span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Principal">
-      <a href="#soluciones" data-i18n="navSol">Soluciones</a>
-      <a href="#reto" data-i18n="navChal">El reto</a>
-      <a href="#enfoque" data-i18n="navApp">Enfoque</a>
-      <a href="#nosotros" data-i18n="navAbout">Nosotros</a>
+      <a href="#sistemas" data-i18n="nav1">Sistemas</a>
+      <a href="#ecosistema" data-i18n="nav2">Ecosistema</a>
+      <a href="#oee" data-i18n="nav3">Calculadora OEE</a>
+      <a href="#contacto" data-i18n="nav4">Contacto</a>
     </nav>
     <div class="nav-tools">
-      <div class="lang" role="group" aria-label="Idioma">
+      <div class="seg" role="group" aria-label="Idioma / Language">
         <button type="button" data-lang="es" aria-pressed="true">ES</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="pill solid small" href="#contacto" data-i18n="navCta">Solicitar demo</a>
+      <a class="pill solid sm" href="#contacto" data-i18n="navCta">Solicitar demo</a>
       <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menú">☰</button>
     </div>
   </div>
@@ -60,273 +56,155 @@
   <section class="hero">
     <div class="iso"></div>
     <div class="wrap">
+      <h1 data-i18n="heroT">Un sistema para cada parte de la operación industrial</h1>
+      <p class="lede" data-i18n="heroP">Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.</p>
+      <div class="cta-row">
+        <a class="pill solid" href="#contacto" data-i18n="heroA">Solicitar una demostración</a>
+        <a class="pill ghost" href="#sistemas" data-i18n="heroB">Ver los sistemas</a>
+      </div>
+
+      <div class="explorer" id="explorer">
+        <div class="dock" role="tablist" aria-label="Sistemas GUVEL" id="dock"></div>
+        <div class="float f1" id="f1" aria-hidden="true"></div>
+        <div class="float f2" id="f2" aria-hidden="true"></div>
+        <div class="window" role="tabpanel" id="win" tabindex="0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="wrap">
+      <p data-i18n="trustP">Diseñado para los equipos que sostienen la operación</p>
+      <ul><li data-i18n="tr1">Manufactura</li><li data-i18n="tr2">Calidad</li><li data-i18n="tr3">Ingeniería</li><li data-i18n="tr4">Metrología</li><li data-i18n="tr5">Mejora continua</li></ul>
+    </div>
+  </section>
+
+  <section class="section" id="sistemas">
+    <div class="wrap">
+      <div class="head">
+        <h2 data-i18n="sysT">Cinco sistemas. Una sola fuente de información.</h2>
+        <p class="lede" data-i18n="sysP">Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.</p>
+      </div>
+      <div class="prod-top" id="prodTop"></div>
+      <div class="prod-bot" id="prodBot"></div>
+    </div>
+  </section>
+
+  <section class="section deep" id="ecosistema">
+    <div class="wrap eco">
+      <div class="map" id="map"></div>
       <div>
-        <h1 data-i18n="heroT">Sistemas más inteligentes para el desempeño industrial</h1>
-        <p class="lede" data-i18n="heroP">GUVEL desarrolla sistemas digitales prácticos que ayudan a las organizaciones industriales a organizar su información, fortalecer sus procesos y conectar las herramientas de la operación diaria.</p>
-        <div class="cta-row">
-          <a class="pill solid" href="#soluciones" data-i18n="heroA">Explorar soluciones</a>
-          <a class="pill ghost" href="#contacto" data-i18n="heroB">Solicitar una demostración</a>
-        </div>
-        <p class="hero-note"><i></i><span data-i18n="heroN">Construido alrededor de flujos de trabajo industriales reales</span></p>
-      </div>
-
-      <div class="eco" aria-label="Ecosistema GUVEL">
-        <svg class="eco-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <line x1="50" y1="50" x2="22" y2="18"/><line x1="50" y1="50" x2="80" y2="26"/>
-          <line x1="50" y1="50" x2="22" y2="84"/><line x1="50" y1="50" x2="78" y2="88"/>
-        </svg>
-        <div class="eco-g">
-          <svg class="mark" viewBox="20 20 1356 1556" aria-hidden="true">
-            <polygon class="m-cy shard s1" points="138,357 138,475 397,325 600,445 345,594 345,713 701,505 1008,682 1362,479 1361,417 702,30 600,89 1209,448 1006,564 398,207"/>
-            <polygon class="m-cy shard s2" points="1336,801 727,801 663,909 939,1071 965,1056 965,967 858,903 1336,903"/>
-            <polygon class="m-so shard s3" points="34,417 34,1176 400,1383 937,1072 836,1012 700,1091 449,947 448,654 346,714 346,1006 597,1150 398,1266 138,1118 136,358"/>
-            <polygon class="m-so shard s4" points="1335,904 1233,904 1231,1141 599,1504 702,1563 1334,1200"/>
-          </svg>
-        </div>
-
-        <div class="art a-gs">
-          <h4>General System <em data-i18n="live">Disponible</em></h4>
-          <div class="big">98.7%</div>
-          <div class="sub" data-i18n="artGs">Calidad del turno</div>
-          <svg class="spark" viewBox="0 0 200 34" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,26 25,22 50,24 75,15 100,18 125,10 150,13 175,6 200,8" fill="none" stroke="#0cc0df" stroke-width="2.5" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>
-        </div>
-        <div class="art a-cal">
-          <h4 data-i18n="calN">Calibración</h4>
-          <div class="row"><span>MC-014</span><span data-i18n="artCal1">vence en 12 días</span></div>
-          <div class="row"><span>CAL-203</span><span data-i18n="artCal2">vigente</span></div>
-        </div>
-        <div class="art a-doc">
-          <h4 data-i18n="docN">Documentos</h4>
-          <div class="row"><span>IT-208</span><span data-i18n="artDoc1">Rev. D vigente</span></div>
-          <div class="row"><span>PR-041</span><span data-i18n="artDoc2">en aprobación</span></div>
-        </div>
-        <div class="art a-act">
-          <h4 data-i18n="actN">Acciones</h4>
-          <div data-i18n="artAct">Acción correctiva 8D-031</div>
-          <div class="bar"><b></b></div>
-          <div class="sub" data-i18n="artAct2">3 de 5 pasos completados</div>
-        </div>
+        <h2 class="h2" data-i18n="ecoT">Lo que pasa en un sistema llega a los demás</h2>
+        <p class="lede" style="margin-top:22px" data-i18n="ecoP">Elige un flujo para ver cómo viaja la información entre sistemas GUVEL, sin capturas dobles ni archivos sueltos.</p>
+        <ul class="flows" id="flows"></ul>
       </div>
     </div>
   </section>
 
-  <section class="statement">
-    <div class="wrap">
-      <p><span data-i18n="st1">Diseñado para la realidad de</span> <span style="color:var(--ink)" data-i18n="st2">manufactura, calidad, operaciones y mejora continua.</span></p>
-    </div>
-  </section>
-
-  <section class="section band" id="soluciones">
+  <section class="section band" id="oee">
     <div class="wrap">
       <div class="head">
-        <h2 data-i18n="solT">Un ecosistema industrial. Múltiples soluciones.</h2>
-        <p class="lede" data-i18n="solP">Cada solución responde a una necesidad operativa específica y comparte el mismo enfoque GUVEL: claridad, trazabilidad y facilidad de uso.</p>
+        <h2 data-i18n="calT">Calcula el OEE, FTQ y COPQ de tu turno</h2>
+        <p class="lede" data-i18n="calP">Los mismos indicadores que GUVEL Operational System calcula automáticamente. Cambia los valores y observa el resultado al instante.</p>
       </div>
-
-      <article class="gs">
-        <div class="gs-copy">
-          <span class="status"><i class="dot"></i><span data-i18n="avail">Disponible ahora</span></span>
-          <h3>GUVEL General System</h3>
-          <p class="lede" style="font-size:17px" data-i18n="gsP">Una visión conectada de la calidad y el desempeño operacional, diseñada para respaldar las decisiones diarias de manufactura.</p>
-          <ul class="ticks">
-            <li data-i18n="gs1">Registros de producción y calidad</li>
-            <li data-i18n="gs2">Visibilidad de scrap y desempeño</li>
-            <li data-i18n="gs3">Indicadores operacionales</li>
-          </ul>
-          <div class="cta-row">
-            <a class="pill solid" href="#contacto" data-i18n="demo">Solicitar una demostración</a>
-            <button class="pill ghost" type="button" data-open="general" data-i18n="detail">Ver detalle</button>
+      <div class="calc">
+        <div class="inputs">
+          <h3><span data-i18n="cIn">Datos del turno</span><button class="linkbtn" type="button" id="calcReset" data-i18n="cReset">Restablecer</button></h3>
+          <div class="fgrid">
+            <div class="field"><label for="iPlan" data-i18n="iPlan">Tiempo planeado</label><div class="unit"><input id="iPlan" type="number" min="1" inputmode="decimal"><span>min</span></div></div>
+            <div class="field"><label for="iDown" data-i18n="iDown">Paros no planeados</label><div class="unit"><input id="iDown" type="number" min="0" inputmode="decimal"><span>min</span></div></div>
+            <div class="field"><label for="iCycle" data-i18n="iCycle">Ciclo ideal por pieza</label><div class="unit"><input id="iCycle" type="number" min="0.1" step="0.1" inputmode="decimal"><span>s</span></div></div>
+            <div class="field"><label for="iTotal" data-i18n="iTotal">Piezas producidas</label><div class="unit"><input id="iTotal" type="number" min="0" inputmode="numeric"><span data-i18n="pz">pzas</span></div></div>
+            <div class="field"><label for="iScrap" data-i18n="iScrap">Piezas de scrap</label><div class="unit"><input id="iScrap" type="number" min="0" inputmode="numeric"><span data-i18n="pz">pzas</span></div></div>
+            <div class="field"><label for="iRework" data-i18n="iRework">Piezas retrabajadas</label><div class="unit"><input id="iRework" type="number" min="0" inputmode="numeric"><span data-i18n="pz">pzas</span></div></div>
+            <div class="sep"></div>
+            <div class="field"><label for="iCostS" data-i18n="iCostS">Costo por pieza de scrap</label><div class="unit"><input id="iCostS" type="number" min="0" step="0.01" inputmode="decimal"><span id="cur1">MXN</span></div></div>
+            <div class="field"><label for="iCostR" data-i18n="iCostR">Costo por retrabajo</label><div class="unit"><input id="iCostR" type="number" min="0" step="0.01" inputmode="decimal"><span id="cur2">MXN</span></div></div>
+            <div class="field full"><label for="iCur" data-i18n="iCur">Moneda</label><select id="iCur"><option value="MXN">MXN</option><option value="USD">USD</option></select></div>
           </div>
         </div>
-        <div class="demo" aria-label="Vista de ejemplo de GUVEL General System">
-          <div class="demo-top">
-            <div><strong data-i18n="dTitle">Tablero de planta</strong><small data-i18n="dNote">Datos de ejemplo</small></div>
-            <div class="seg" role="group" aria-label="Turno">
-              <button type="button" data-shift="0" aria-pressed="true" data-i18n="t1">Turno 1</button>
-              <button type="button" data-shift="1" aria-pressed="false" data-i18n="t2">Turno 2</button>
-              <button type="button" data-shift="2" aria-pressed="false" data-i18n="t3">Turno 3</button>
+        <div class="results" aria-live="polite">
+          <div class="ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="track" cx="60" cy="60" r="50"/><circle class="val" id="rVal" cx="60" cy="60" r="50" stroke-dasharray="0 314"/><text x="60" y="60" id="rTxt">0%</text></svg>
+            <div class="bars">
+              <div><span><em style="font-style:normal" data-i18n="rA">Disponibilidad</em><b id="rA">0%</b></span><i id="bA" style="--w:0%"></i></div>
+              <div><span><em style="font-style:normal" data-i18n="rP">Desempeño</em><b id="rP">0%</b></span><i id="bP" style="--w:0%"></i></div>
+              <div><span><em style="font-style:normal" data-i18n="rQ">Calidad</em><b id="rQ">0%</b></span><i id="bQ" style="--w:0%"></i></div>
             </div>
           </div>
-          <div class="metrics">
-            <div class="metric"><span data-i18n="mQ">Calidad</span><b id="mQ">98.7%</b><small id="mQd">+0.4 pts</small></div>
-            <div class="metric"><span data-i18n="mP">Producción</span><b id="mP">12,450</b><small id="mPd" data-i18n="pcs">piezas</small></div>
-            <div class="metric"><span data-i18n="mS">Scrap</span><b id="mS">1.3%</b><small id="mSd">−0.2 pts</small></div>
+          <p class="oee-note" id="oeeNote"></p>
+          <div class="rgrid">
+            <div><span>FTQ</span><b id="rFtq">0%</b><small data-i18n="rFtqS">Piezas buenas a la primera</small></div>
+            <div><span>COPQ</span><b id="rCopq">$0</b><small data-i18n="rCopqS">Costo de scrap y retrabajo</small></div>
+            <div><span data-i18n="rGood">Piezas buenas</span><b id="rGoodV">0</b><small data-i18n="rGoodS">Producidas sin scrap</small></div>
+            <div><span data-i18n="rLost">Tiempo perdido</span><b id="rLostV">0 min</b><small data-i18n="rLostS">Paros más pérdida de velocidad</small></div>
           </div>
-          <div class="chart">
-            <div class="chart-h"><span data-i18n="cT">Calidad por día</span><span id="cAvg">97.9% prom.</span></div>
-            <svg viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true">
-              <g class="grid"><line x1="0" y1="30" x2="300" y2="30"/><line x1="0" y1="75" x2="300" y2="75"/><line x1="0" y1="120" x2="300" y2="120"/></g>
-              <path class="area" id="cArea"/>
-              <path class="ln" id="cLine" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <div class="days" id="cDays"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
-          </div>
-        </div>
-      </article>
-
-      <div class="trio">
-        <article class="sol">
-          <span class="status next"><i class="dot"></i><span data-i18n="next">Próximamente</span></span>
-          <h3>GUVEL Calibration</h3>
-          <p data-i18n="calP">Un entorno estructurado para equipos, programas de calibración, certificados y trazabilidad de medición.</p>
-          <div class="mini" aria-hidden="true">
-            <div class="row"><span data-i18n="c1">Micrómetro MC-014</span><span class="warn" data-i18n="c1s">12 días</span></div>
-            <div class="row"><span data-i18n="c2">Calibrador CAL-203</span><span data-i18n="c2s">Vigente</span></div>
-            <div class="row"><span data-i18n="c3">Torquímetro TQ-077</span><span data-i18n="c3s">Certificado adjunto</span></div>
-          </div>
-          <button class="linkbtn" type="button" data-open="calibration" data-i18n="detail">Ver detalle</button>
-        </article>
-        <article class="sol">
-          <span class="status next"><i class="dot"></i><span data-i18n="next">Próximamente</span></span>
-          <h3>GUVEL Documents</h3>
-          <p data-i18n="docP">Gestión documental controlada basada en revisiones, aprobaciones y acceso a información vigente.</p>
-          <div class="mini" aria-hidden="true">
-            <div class="row"><span>IT-208 Rev. D</span><span class="warn" data-i18n="d1s">Vigente</span></div>
-            <div class="row"><span>IT-208 Rev. C</span><span data-i18n="d2s">Obsoleta</span></div>
-            <div class="row"><span>PR-041 Rev. A</span><span data-i18n="d3s">En aprobación</span></div>
-          </div>
-          <button class="linkbtn" type="button" data-open="documents" data-i18n="detail">Ver detalle</button>
-        </article>
-        <article class="sol">
-          <span class="status next"><i class="dot"></i><span data-i18n="next">Próximamente</span></span>
-          <h3>GUVEL Actions</h3>
-          <p data-i18n="actP">Un sistema enfocado en responsables, acciones correctivas, fechas compromiso y seguimiento significativo.</p>
-          <div class="mini" aria-hidden="true">
-            <div class="row"><span data-i18n="a1">Contención 8D-031</span><span class="warn" data-i18n="a1s">Cerrada</span></div>
-            <div class="row"><span data-i18n="a2">Causa raíz</span><span data-i18n="a2s">Ing. calidad, vie</span></div>
-            <div class="row"><span data-i18n="a3">Verificación</span><span data-i18n="a3s">Pendiente</span></div>
-          </div>
-          <button class="linkbtn" type="button" data-open="actions" data-i18n="detail">Ver detalle</button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section deep" id="reto">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <h2 data-i18n="chT">La información debe respaldar la operación, no frenarla</h2>
-        </div>
-        <div>
-          <p class="lede" data-i18n="chP">Los registros de producción, los datos de calidad, los documentos y el seguimiento suelen vivir en lugares separados. GUVEL les da estructura y los conecta.</p>
-          <div class="stage-ctrl">
-            <div class="seg dark" role="group" aria-label="Comparar">
-              <button type="button" data-state="before" aria-pressed="true" data-i18n="before">Hoy</button>
-              <button type="button" data-state="after" aria-pressed="false" data-i18n="after">Con GUVEL</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="stage" id="stage" aria-live="polite">
-        <svg class="hub mark on-navy" viewBox="20 20 1356 1556" aria-hidden="true"><use href="#g"/></svg>
-        <div class="frags">
-          <div class="frag"><span data-i18n="f1">produccion_semana_v7_FINAL.xlsx</span><small data-i18n="f1s">En la computadora de un supervisor</small><span class="to">General System</span></div>
-          <div class="frag"><span data-i18n="f2">Reporte de scrap semanal</span><small data-i18n="f2s">Se arma a mano cada lunes</small><span class="to">General System</span></div>
-          <div class="frag"><span data-i18n="f3">Certificado de calibración</span><small data-i18n="f3s">Adjunto en un correo de marzo</small><span class="to">GUVEL Calibration</span></div>
-          <div class="frag"><span data-i18n="f4">Procedimiento Rev. B impreso</span><small data-i18n="f4s">Pegado junto a la máquina</small><span class="to">GUVEL Documents</span></div>
-          <div class="frag"><span data-i18n="f5">Pendientes del turno</span><small data-i18n="f5s">Perdidos en el chat del equipo</small><span class="to">GUVEL Actions</span></div>
-          <div class="frag"><span data-i18n="f6">Acción correctiva abierta</span><small data-i18n="f6s">Sin responsable ni fecha</small><span class="to">GUVEL Actions</span></div>
+          <p class="warnmsg" id="calcWarn"></p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap">
-      <div class="head">
-        <h2 data-i18n="rmT">Construido para crecer con las necesidades industriales</h2>
-        <p class="lede" data-i18n="rmP">El ecosistema empieza por lo que más importa en planta y se amplía módulo a módulo, compartiendo la misma información.</p>
-      </div>
-      <div class="hexes"><ul class="hrow"><li class="live"><span>General System<small data-i18n="avail2">Disponible</small></span></li><li class="live"><span>Calibration<small data-i18n="next2">En desarrollo</small></span></li><li class="live"><span>Documents<small data-i18n="next2">En desarrollo</small></span></li><li class="live"><span>Actions<small data-i18n="next2">En desarrollo</small></span></li></ul><ul class="hrow"><li><span>APQP</span></li><li><span>PPAP</span></li><li><span data-i18n="h1">Auditorías</span></li></ul><ul class="hrow"><li><span>SPC</span></li><li><span data-i18n="h2">Analítica</span></li><li><span data-i18n="h3">Habilidades</span></li><li><span data-i18n="h4">Mantenimiento</span></li></ul></div>
-      <div class="hex-legend"><span><i></i><span data-i18n="lg1">Solución actual</span></span><span><i class="o"></i><span data-i18n="lg2">Siguientes etapas del ecosistema</span></span></div>
-    </div>
-  </section>
-
-  <section class="section band" id="enfoque">
-    <div class="wrap">
-      <div class="head">
-        <h2 data-i18n="pplT">Responsabilidades diferentes. Una realidad industrial conectada.</h2>
-        <p class="lede" data-i18n="pplP">Creado para las personas que mueven la industria.</p>
-      </div>
-      <div class="people">
-        <article><h3 data-i18n="p1">Calidad</h3><p data-i18n="p1t">Gerentes, ingenieros y equipos de calidad que necesitan visibilidad, trazabilidad y control.</p></article>
-        <article><h3 data-i18n="p2">Operaciones</h3><p data-i18n="p2t">Líderes de operaciones, ingenieros de manufactura y equipos de producción que gestionan el desempeño diario.</p></article>
-        <article><h3 data-i18n="p3">Mejora continua</h3><p data-i18n="p3t">Líderes de mejora e industria que convierten la información en acciones significativas.</p></article>
-      </div>
-
-      <div class="approach" style="margin-top:104px">
-        <div>
-          <h2 data-i18n="apT">Conectado, no complicado.</h2>
-          <p class="lede" data-i18n="apP">Los equipos industriales administran información crítica entre hojas de cálculo, documentos y herramientas desconectadas. GUVEL aporta estructura a esos flujos diarios sin perder el contexto operacional.</p>
-        </div>
-        <div class="principles">
-          <div><h3 data-i18n="pr1">Práctico</h3><p data-i18n="pr1t">Diseñado alrededor de flujos de trabajo y decisiones industriales reales.</p></div>
-          <div><h3 data-i18n="pr2">Conectado</h3><p data-i18n="pr2t">Soluciones independientes que evolucionan como parte de un mismo ecosistema.</p></div>
-          <div><h3 data-i18n="pr3">Escalable</h3><p data-i18n="pr3t">Comienza con lo importante y crece conforme evoluciona la organización.</p></div>
-          <div><h3 data-i18n="pr4">Industrial</h3><p data-i18n="pr4t">Pensado para manufactura, operaciones y mejora de procesos.</p></div>
+    <div class="wrap why">
+      <div>
+        <h2 class="h2" data-i18n="whyT">Hecho desde la planta, no desde una presentación</h2>
+        <div class="plist">
+          <div><h3 data-i18n="w1">Práctico</h3><p data-i18n="w1t">Cada pantalla parte de un flujo real: el arranque de turno, la auditoría, la revisión de un documento.</p></div>
+          <div><h3 data-i18n="w2">Conectado</h3><p data-i18n="w2t">Un hallazgo, una acción y el documento que corrige comparten la misma trazabilidad.</p></div>
+          <div><h3 data-i18n="w3">Escalable</h3><p data-i18n="w3t">Empieza con un sistema y agrega los demás cuando la organización lo necesite.</p></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="nosotros">
-    <div class="wrap about">
-      <div class="body">
-        <h2 data-i18n="abT">Tecnología moldeada por la experiencia industrial</h2>
-        <p class="lede" data-i18n="abP1">GUVEL construye Smarter Industrial Systems: soluciones digitales prácticas para administrar información, mejorar la visibilidad y conectar calidad, operaciones y mejora continua.</p>
-        <p data-i18n="abP2">GUVEL nace de la experiencia práctica con procesos de manufactura, sistemas de calidad, datos operacionales y mejora continua. Sin afirmaciones inventadas ni historias genéricas de software.</p>
-        <div class="focus">
-          <div><b data-i18n="fo1">Calidad</b><span data-i18n="fo1t">Visibilidad y control</span></div>
-          <div><b data-i18n="fo2">Operaciones</b><span data-i18n="fo2t">Información práctica del proceso</span></div>
-          <div><b data-i18n="fo3">Mejora</b><span data-i18n="fo3t">Acción y aprendizaje estructurados</span></div>
-        </div>
-      </div>
-      <figure class="quote" style="margin:0">
+      <figure class="quote">
         <svg viewBox="20 20 1356 1556" aria-hidden="true"><use href="#g"/></svg>
-        <blockquote data-i18n="qt">Crear sistemas que sean útiles en el entorno real de trabajo, no solamente impresionantes en una presentación.</blockquote>
+        <blockquote data-i18n="qt">Crear sistemas útiles en el entorno real de trabajo, no solamente impresionantes en una presentación.</blockquote>
         <cite data-i18n="qc">La dirección de GUVEL</cite>
       </figure>
     </div>
   </section>
 
-  <section class="contact" id="contacto">
-    <div class="wrap">
-      <div class="contact-card">
-        <div class="iso"></div>
-        <div>
-          <h2 data-i18n="ctT">¿Listo para explorar GUVEL?</h2>
-          <p data-i18n="ctP">Cuéntanos cómo se gestiona hoy la información en tu planta y te mostramos GUVEL General System con un escenario parecido al tuyo.</p>
-        </div>
-        <div class="cta-row">
-          <a class="pill cyan" href="mailto:contact@guvelsystems.com?subject=GUVEL%20-%20Demo" data-i18n="ctA">Escribir a GUVEL</a>
-          <a class="pill line-light" href="#soluciones" data-i18n="ctB">Ver soluciones</a>
-        </div>
+  <section class="section band" id="contacto">
+    <div class="wrap contact-wrap">
+      <div>
+        <h2 class="h2" data-i18n="ctT">Conversemos sobre tu operación</h2>
+        <p class="lede" data-i18n="ctP">Cuéntanos qué sistemas te interesan. Para los disponibles preparamos una demostración con un escenario parecido al tuyo; para los que están en desarrollo, te avisamos en cuanto se lancen.</p>
+        <div class="contact-meta"><span data-i18n="ctMail">También puedes escribir directo a</span><a href="mailto:contact@guvelsystems.com">contact@guvelsystems.com</a></div>
       </div>
+      <form class="form" id="form" novalidate>
+        <div class="fgrid">
+          <div class="field"><label for="fName" data-i18n="fName">Nombre</label><input id="fName" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="fCo" data-i18n="fCo">Empresa</label><input id="fCo" type="text" autocomplete="organization"></div>
+          <div class="field full"><label for="fRole" data-i18n="fRole">Puesto</label><input id="fRole" type="text" autocomplete="organization-title"></div>
+        </div>
+        <div>
+          <p class="legend-q" id="chkLbl" data-i18n="fSys">Sistemas de interés</p>
+          <div class="checks" id="checks" role="group" aria-labelledby="chkLbl"></div>
+        </div>
+        <div class="field"><label for="fMsg" data-i18n="fMsg">Mensaje</label><textarea id="fMsg"></textarea></div>
+        <p class="err" id="fErr" role="alert"></p>
+        <div class="cta-row" style="margin-top:0;align-items:center"><button class="pill solid" type="submit" data-i18n="fSend">Preparar correo</button><span class="hint" data-i18n="fHint">Se abrirá tu aplicación de correo con el mensaje listo.</span></div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top"><svg class="mark" aria-hidden="true" style="width:24px;height:28px"><use href="#g"/></svg><div><b>GUVEL</b><span data-i18n="ft">Sistemas digitales prácticos para organizaciones industriales</span></div></a>
-    <span>© <span id="yr"></span> GUVEL. <a href="#top" data-i18n="back">Volver arriba</a></span>
+    <div class="fgrid-foot">
+      <div>
+        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#g"/></svg><span><b>GUVEL</b><small>Smarter Industrial Systems</small></span></a>
+        <p style="margin-top:16px;max-width:40ch" data-i18n="ft">Sistemas digitales prácticos para organizaciones industriales.</p>
+      </div>
+      <div><h4 data-i18n="ftSys">Sistemas</h4><ul id="footSys"></ul></div>
+      <div><h4 data-i18n="ftCo">GUVEL</h4><ul>
+        <li><a href="#ecosistema" data-i18n="nav2">Ecosistema</a></li>
+        <li><a href="#oee" data-i18n="nav3">Calculadora OEE</a></li>
+        <li><a href="#contacto" data-i18n="nav4">Contacto</a></li>
+        <li><a href="mailto:contact@guvelsystems.com">contact@guvelsystems.com</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="yr"></span> GUVEL</span><a href="#top" data-i18n="back">Volver arriba</a></div>
   </div>
 </footer>
-
-<dialog id="dlg" aria-labelledby="dlgT">
-  <div class="dlg">
-    <button class="close" type="button" id="dlgX" aria-label="Cerrar">×</button>
-    <span class="status" id="dlgS"></span>
-    <h2 id="dlgT"></h2>
-    <p class="lede" id="dlgL" style="font-size:17px"></p>
-    <h4 data-i18n="mWhat">Qué es</h4><p id="dlgW"></p>
-    <h4 data-i18n="mHelp">Cómo te ayuda</h4><ul class="ticks" id="dlgB"></ul>
-    <h4 data-i18n="mOut">Impacto operacional</h4><p class="outcome" id="dlgO"></p>
-    <div class="cta-row"><a class="pill solid" href="#contacto" id="dlgC"></a></div>
-  </div>
-</dialog>
-
 <script src="js/app.js" defer></script>
 </body>
 </html>

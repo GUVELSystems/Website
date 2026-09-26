@@ -1,4 +1,4 @@
-# GUVEL — Smarter Industrial Systems (v2.0)
+# GUVEL — Smarter Industrial Systems (v3.0)
 
 Sitio estático, sin dependencias ni proceso de compilación. Listo para GitHub Pages.
 
@@ -8,7 +8,7 @@ Sitio estático, sin dependencias ni proceso de compilación. Listo para GitHub 
 index.html            Página principal (ES/EN)
 404.html              Página de error
 css/styles.css        Estilos, colores de marca y modo oscuro
-js/app.js             Idioma, demo por turnos, sección "El reto", ventanas de detalle, menú móvil
+js/app.js             Idioma, explorador de sistemas, mapa del ecosistema, calculadora OEE, formulario
 assets/
   guvel-mark.svg      Favicon (G sobre navy)
   guvel-g-light.svg   G para fondos claros
@@ -55,7 +55,12 @@ Con dominio propio, cambia en `index.html` la etiqueta `og:image` a la URL compl
 (`https://www.guvelsystems.com/assets/og-image.png`) para que la vista previa funcione en WhatsApp y LinkedIn.
 
 ## Editar contenido
-- **Textos:** están en `js/app.js`, objeto `T` (`es` y `en`). Las fichas de cada solución están en el objeto `S`.
-- **Correo de contacto:** busca `mailto:contact@guvelsystems.com` en `index.html`.
+- **Textos generales:** `js/app.js`, objeto `T` (`es` y `en`).
+- **Sistemas (nombre, estado, descripción, funciones):** arreglo `SYS` en `js/app.js`.
+  Para marcar un sistema como disponible cambia `rel:0` por `rel:1`; el sitio lo mueve solo a la fila de disponibles, cambia su botón a "Solicitar demo" y actualiza el mapa.
+  Ajusta también la frase "Dos sistemas ya están disponibles…" (`sysP` en `T`).
+- **Pantallas de ejemplo de cada sistema:** objetos `P` (textos y datos) y `R` (diseño) en `js/app.js`.
+- **Flujos del ecosistema:** objeto `FL` en `js/app.js`.
+- **Valores iniciales de la calculadora:** objeto `DEF` en `js/app.js`.
+- **Correo de contacto:** busca `contact@guvelsystems.com` en `index.html` y `js/app.js`.
 - **Colores:** variables al inicio de `css/styles.css` (`--navy`, `--ice`, `--cyan`).
-- **Datos de la demo:** arreglo `shifts` en `js/app.js`.
