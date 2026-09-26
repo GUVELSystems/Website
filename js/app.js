@@ -180,6 +180,7 @@ function buildMap(){
   $('map').innerHTML=`<svg viewBox="0 0 520 520" role="img" aria-label="${t('ecoT')}">
    ${f.map((x,i)=>`<path class="draw" pathLength="1" d="${curve(x[0],x[1])}"/>`).join('')}
    ${f.map((x,i)=>`<path class="edge" id="e${i}" d="${curve(x[0],x[1])}"/>`).join('')}
+   <g class="pulse-rings hide" aria-hidden="true">${[0,1,2].map(i=>`<polygon class="ripple" style="animation-delay:${(i*0.95).toFixed(2)}s" points="${hexPts(260,260,46)}"/>`).join('')}</g>
    <svg x="215" y="208" width="90" height="104" viewBox="20 20 1356 1556" class="on-navy core"><use href="#g"/></svg>
    ${SYS.map(s=>{const [x,y]=POS[s.id];const below=y>260;return `<g class="node ${s.rel?'rel':''}" id="n-${s.id}"><polygon points="${hexPts(x,y,34)}"/><text class="ab" x="${x}" y="${y}">${s.ab}</text><text x="${x}" y="${below?y+56:y-50}">${s.short}</text><text class="ss" x="${x}" y="${below?y+72:y-34}">${s.rel?t('rel'):t('dev')}</text></g>`}).join('')}
   </svg>`;
@@ -187,6 +188,7 @@ function buildMap(){
   $('flows').innerHTML=f.map((x,i)=>`<li><button type="button" aria-pressed="${i===flowOn}" data-f="${i}"><span class="rt">${name(x[0])} → ${name(x[1])}</span><span class="tx">${x[2]}</span></button></li>`).join('');
   $('flows').querySelectorAll('button').forEach(b=>b.onclick=()=>setFlow(+b.dataset.f));
   setFlow(flowOn);
+  if(reduce){$('ecosistema').style.clipPath='none'}
   onScroll();
 }
 function setFlow(i){
@@ -248,6 +250,95 @@ $('form').addEventListener('submit',e=>{
 });
 
 
+/* ---------- hero hex network ---------- */
+function initHeroFx(){
+  const canvas=$('heroFx'),sec=$('heroSec');
+  if(!canvas||!sec)return;
+  const ctx=canvas.getContext('2d');
+  const DPR=Math.min(devicePixelRatio||1,2);
+  let W=0,H=0,cells=[],edgesList=[],pulses=[],raf=null,mx=0,my=0,tmx=0,tmy=0,visible=true;
+  const SP=64;
+  function hexPath(x,y,r){
+    ctx.beginPath();
+    for(let k=0;k<6;k++){const a=Math.PI/180*(60*k-90);const px=x+r*Math.cos(a),py=y+r*Math.sin(a);k?ctx.lineTo(px,py):ctx.moveTo(px,py)}
+    ctx.closePath();
+  }
+  function build(){
+    const r=sec.getBoundingClientRect();W=r.width;H=r.height;
+    canvas.width=W*DPR;canvas.height=H*DPR;canvas.style.width=W+'px';canvas.style.height=H+'px';
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    const cols=Math.ceil(W/SP)+3,rows=Math.ceil(H/(SP*.88))+3;
+    cells=[];
+    for(let j=0;j<rows;j++){const row=[];
+      for(let i=0;i<cols;i++){
+        const x=i*SP+(j%2?SP/2:0)-SP,y=j*SP*.88-SP;
+        row.push({x,y,ox:x,oy:y,ph:Math.random()*Math.PI*2,ph2:Math.random()*Math.PI*2});
+      }
+      cells.push(row);
+    }
+    edgesList=[];
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+      const nbrs=[[i+1,j],[i,j+1],[i+(j%2?1:-1),j+1]];
+      for(const [ni,nj] of nbrs){if(nj<rows&&ni>=0&&ni<cols)edgesList.push({a:[j,i],b:[nj,ni]})}
+    }
+    pulses=[];
+    tmx=mx=W/2;tmy=my=H/2;
+  }
+  sec.addEventListener('pointermove',e=>{const r=sec.getBoundingClientRect();tmx=e.clientX-r.left;tmy=e.clientY-r.top},{passive:true});
+  sec.addEventListener('pointerleave',()=>{tmx=W/2;tmy=H/2});
+  function frame(t){
+    if(!visible){raf=requestAnimationFrame(frame);return}
+    mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
+    const px=(mx-W/2)/(W||1)*20,py=(my-H/2)/(H||1)*20;
+    ctx.clearRect(0,0,W,H);
+    const rows=cells.length,cols=cells[0]?cells[0].length:0;
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+      const c=cells[j][i];
+      c.x=c.ox+Math.sin(t/5200+c.ph)*7+px*(1-j/rows*.4);
+      c.y=c.oy+Math.cos(t/4600+c.ph2)*7+py*(1-j/rows*.4);
+    }
+    ctx.lineWidth=1;
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+      const c=cells[j][i];
+      const nbrs=[[i+1,j],[i,j+1],[i+ (j%2?1:-1),j+1]];
+      for(const [ni,nj] of nbrs){
+        if(nj>=rows||ni<0||ni>=cols)continue;
+        const n=cells[nj][ni];
+        const dist=Math.hypot(c.x-n.x,c.y-n.y);
+        const o=clamp(1-dist/(SP*1.35),0,1)*.22;
+        if(o<=0.003)continue;
+        ctx.strokeStyle=`rgba(12,192,223,${o.toFixed(3)})`;
+        ctx.beginPath();ctx.moveTo(c.x,c.y);ctx.lineTo(n.x,n.y);ctx.stroke();
+      }
+    }
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+      const c=cells[j][i];
+      const puls=(Math.sin(t/1900+c.ph)+1)/2;
+      hexPath(c.x,c.y,2+puls*1.6);
+      ctx.fillStyle=`rgba(12,192,223,${(0.16+puls*0.28).toFixed(3)})`;
+      ctx.fill();
+    }
+    if(edgesList.length&&Math.random()<0.035&&pulses.length<7){
+      const e=edgesList[(Math.random()*edgesList.length)|0];
+      pulses.push({e,t0:t,dur:1000+Math.random()*700});
+    }
+    pulses=pulses.filter(p=>t-p.t0<p.dur);
+    for(const p of pulses){
+      const a=cells[p.e.a[0]]&&cells[p.e.a[0]][p.e.a[1]],b=cells[p.e.b[0]]&&cells[p.e.b[0]][p.e.b[1]];
+      if(!a||!b)continue;
+      const k=(t-p.t0)/p.dur,x=a.x+(b.x-a.x)*k,y=a.y+(b.y-a.y)*k,fade=Math.sin(Math.PI*k);
+      ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fillStyle=`rgba(12,192,223,${(0.16*fade).toFixed(3)})`;ctx.fill();
+      ctx.beginPath();ctx.arc(x,y,2.8,0,Math.PI*2);ctx.fillStyle=`rgba(12,192,223,${(0.85*fade).toFixed(3)})`;ctx.fill();
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  const io=new IntersectionObserver(es=>{visible=es[0].isIntersecting},{threshold:0});
+  io.observe(sec);
+  build();
+  addEventListener('resize',build);
+  if(!reduce){raf=requestAnimationFrame(frame)}
+}
+
 /* ---------- scroll dynamics ---------- */
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const ease=x=>1-Math.pow(1-x,3);
@@ -302,6 +393,7 @@ function frame(){
     }
     const q=clamp((vh*.7-er.top)/(vh*.75));
     const core=eco.querySelector('.core');if(core)core.classList.toggle('hide',q<.08);
+    const pr=eco.querySelector('.pulse-rings');if(pr)pr.classList.toggle('hide',q<.1);
     const nodes=eco.querySelectorAll('.node');nodes.forEach((nd,i)=>nd.classList.toggle('hide',q<.15+i*.1));
     eco.querySelectorAll('.draw').forEach((pth,i)=>{const s=.4+i*.1;const v=clamp((q-s)/.25);pth.style.strokeDasharray=`${v} 1`});
     eco.querySelectorAll('.edge').forEach(e=>e.style.visibility=q>=.95?'visible':'hidden');
@@ -342,6 +434,6 @@ $('menuBtn').onclick=()=>{const o=$('navLinks').classList.toggle('open');$('menu
 $('navLinks').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{$('navLinks').classList.remove('open');$('menuBtn').setAttribute('aria-expanded',false)}));
 $('yr').textContent=new Date().getFullYear();
 
-loadCalc();applyLang(lang);measure();
+loadCalc();applyLang(lang);measure();initHeroFx();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);
 if(reduce||matchMedia('(max-width: 640px)').matches)stopAuto();else timer=requestAnimationFrame(tick);

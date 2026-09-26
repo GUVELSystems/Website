@@ -8,7 +8,7 @@ Sitio estático, sin dependencias ni proceso de compilación. Listo para GitHub 
 index.html            Página principal (ES/EN)
 404.html              Página de error
 css/styles.css        Estilos, colores de marca y modo oscuro
-js/app.js             Idioma, explorador, recorrido de sistemas, efectos de desplazamiento, mapa, calculadora OEE, formulario
+js/app.js             Idioma, explorador, recorrido de sistemas, efectos de desplazamiento, red hexagonal animada, mapa, calculadora OEE, formulario
 assets/
   guvel-mark.svg      Favicon (G sobre navy)
   guvel-g-light.svg   G para fondos claros
@@ -65,9 +65,7 @@ Con dominio propio, cambia en `index.html` la etiqueta `og:image` a la URL compl
 - **Correo de contacto:** busca `contact@guvelsystems.com` en `index.html` y `js/app.js`.
 - **Colores:** variables al inicio de `css/styles.css` (`--navy`, `--ice`, `--cyan`).
 
-## Efectos de desplazamiento
-- Frase que se ilumina palabra por palabra (`scrub` en `T`).
-- Sistemas en recorrido horizontal fijo en pantallas de escritorio; en celular se apilan como tarjetas.
-- La sección del ecosistema se revela desde un hexágono y el mapa se dibuja con el scroll.
-- Barra de progreso bajo el menú y riel lateral de secciones.
-Todo se desactiva automáticamente si el visitante tiene activada la opción de reducir movimiento.
+## Animaciones nuevas
+- **Fondo del inicio:** una red hexagonal animada detrás del titular, con paralaje al mover el mouse y pequeños pulsos de luz que viajan por sus líneas, evocando el paso de información entre sistemas.
+- **Logo en "Ecosistema":** brillo pulsante continuo y anillos hexagonales que emanan del logo (efecto de transmisión de datos hacia los sistemas conectados).
+Ambas se desactivan automáticamente si el visitante tiene activada la opción de reducir movimiento.
