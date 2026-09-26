@@ -1,5 +1,5 @@
 const T={
-es:{nav1:'Sistemas',nav2:'Ecosistema',nav3:'Calculadora OEE',nav4:'Contacto',navCta:'Solicitar demo',
+es:{scrub:'GUVEL conecta la información de la planta, la calidad, los documentos, la metrología y los nuevos proyectos para que cada decisión parta de datos confiables.',rl0:'Inicio',nav1:'Sistemas',nav2:'Ecosistema',nav3:'Calculadora OEE',nav4:'Contacto',navCta:'Solicitar demo',
 heroT:'Un sistema para cada parte de la operación industrial',heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
 trustP:'Diseñado para los equipos que sostienen la operación',tr1:'Manufactura',tr2:'Calidad',tr3:'Ingeniería',tr4:'Metrología',tr5:'Mejora continua',
 sysT:'Cinco sistemas. Una sola fuente de información.',sysP:'Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.',
@@ -16,7 +16,7 @@ ctT:'Conversemos sobre tu operación',ctP:'Cuéntanos qué sistemas te interesan
 fName:'Nombre',fCo:'Empresa',fRole:'Puesto',fSys:'Sistemas de interés',fMsg:'Mensaje',fSend:'Preparar correo',fHint:'Se abrirá tu aplicación de correo con el mensaje listo.',
 eName:'Escribe tu nombre para preparar el correo.',eSys:'Elige al menos un sistema de interés.',mSubj:'GUVEL: interés en',mHello:'Hola equipo GUVEL,',mBody:'Me interesa conocer:',mFrom:'Nombre',mCo:'Empresa',mRole:'Puesto',
 ft:'Sistemas digitales prácticos para organizaciones industriales.',ftSys:'Sistemas',ftCo:'GUVEL',back:'Volver arriba'},
-en:{nav1:'Systems',nav2:'Ecosystem',nav3:'OEE calculator',nav4:'Contact',navCta:'Request a demo',
+en:{scrub:'GUVEL connects plant, quality, document, metrology and new project information so every decision starts from reliable data.',rl0:'Home',nav1:'Systems',nav2:'Ecosystem',nav3:'OEE calculator',nav4:'Contact',navCta:'Request a demo',
 heroT:'A system for every part of the industrial operation',heroP:'Five GUVEL systems that share the same information: plant performance, quality, documents, calibration and new product projects.',heroA:'Request a demo',heroB:'See the systems',
 trustP:'Designed for the teams that keep the operation running',tr1:'Manufacturing',tr2:'Quality',tr3:'Engineering',tr4:'Metrology',tr5:'Continuous improvement',
 sysT:'Five systems. One source of information.',sysP:'Two systems are available today and three are in development. Each one works on its own and becomes more useful when connected to the others.',
@@ -155,16 +155,18 @@ ex.addEventListener('focusin',()=>stopAuto());
 
 /* ---------- products ---------- */
 function buildProducts(){
-  const card=s=>{const d=s[lang];return `<article class="prod" data-rel="${s.rel}" id="p-${s.id}"><div class="top"><span class="code" aria-hidden="true">${s.ab}</span>${st(s.rel)}</div>
+  $('track').innerHTML=SYS.map((s,i)=>{const d=s[lang];return `<article class="slide" data-rel="${s.rel}" id="p-${s.id}" style="--i:${i}">
+   <div class="s-copy"><div class="top"><span class="code" aria-hidden="true">${s.ab}</span>${st(s.rel)}</div>
    <h3>${s.name}</h3><p>${d.d}</p><ul class="chips">${d.f.map(f=>`<li>${f}</li>`).join('')}</ul>
-   <div class="cta-row">${s.rel?`<a class="pill solid sm" href="#contacto" data-pick="${s.id}">${t('demo')}</a>`:`<a class="pill ghost sm" href="#contacto" data-pick="${s.id}">${t('notify')}</a>`}<button class="linkbtn" type="button" data-live="${SYS.indexOf(s)}">${t('explore')}</button></div></article>`};
-  $('prodTop').innerHTML=SYS.filter(s=>s.rel).map(card).join('');
-  $('prodBot').innerHTML=SYS.filter(s=>!s.rel).map(card).join('');
+   <div class="cta-row">${s.rel?`<a class="pill solid sm" href="#contacto" data-pick="${s.id}">${t('demo')}</a>`:`<a class="pill ghost sm" href="#contacto" data-pick="${s.id}">${t('notify')}</a>`}</div></div>
+   <div class="s-view" aria-hidden="true"><div class="panel">${R[s.id](P[lang])}</div></div></article>`}).join('');
+  $('sysProg').innerHTML=SYS.map((s,i)=>`<li><button type="button" data-go="${i}"><i></i>${s.short}</button></li>`).join('');
   document.querySelectorAll('[data-pick]').forEach(a=>a.onclick=()=>pick(a.dataset.pick));
-  document.querySelectorAll('[data-live]').forEach(b=>b.onclick=()=>{stopAuto();show(+b.dataset.live);ex.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})});
-  $('footSys').innerHTML=SYS.map(s=>`<li><a href="#p-${s.id}">${s.name.replace('GUVEL ','')}</a></li>`).join('');
+  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>goSlide(+b.dataset.go));
+  $('footSys').innerHTML=SYS.map((s,i)=>`<li><a href="#p-${s.id}" data-go="${i}">${s.name.replace('GUVEL ','')}</a></li>`).join('');
+  document.querySelectorAll('#footSys [data-go]').forEach(a=>a.onclick=e=>{if(pinOn){e.preventDefault();goSlide(+a.dataset.go)}});
+  measure();
 }
-
 /* ---------- ecosystem ---------- */
 const POS={op:[260,62],qa:[452,200],doc:[378,430],cal:[142,430],prj:[68,200]};
 const FL={
@@ -176,14 +178,16 @@ const hexPts=(x,y,r)=>[0,1,2,3,4,5].map(k=>{const a=Math.PI/180*(60*k-90);return
 function buildMap(){
   const f=FL[lang];
   $('map').innerHTML=`<svg viewBox="0 0 520 520" role="img" aria-label="${t('ecoT')}">
+   ${f.map((x,i)=>`<path class="draw" pathLength="1" d="${curve(x[0],x[1])}"/>`).join('')}
    ${f.map((x,i)=>`<path class="edge" id="e${i}" d="${curve(x[0],x[1])}"/>`).join('')}
-   <svg x="215" y="208" width="90" height="104" viewBox="20 20 1356 1556" class="on-navy"><use href="#g"/></svg>
+   <svg x="215" y="208" width="90" height="104" viewBox="20 20 1356 1556" class="on-navy core"><use href="#g"/></svg>
    ${SYS.map(s=>{const [x,y]=POS[s.id];const below=y>260;return `<g class="node ${s.rel?'rel':''}" id="n-${s.id}"><polygon points="${hexPts(x,y,34)}"/><text class="ab" x="${x}" y="${y}">${s.ab}</text><text x="${x}" y="${below?y+56:y-50}">${s.short}</text><text class="ss" x="${x}" y="${below?y+72:y-34}">${s.rel?t('rel'):t('dev')}</text></g>`}).join('')}
   </svg>`;
   const name=id=>SYS.find(s=>s.id===id).short;
   $('flows').innerHTML=f.map((x,i)=>`<li><button type="button" aria-pressed="${i===flowOn}" data-f="${i}"><span class="rt">${name(x[0])} → ${name(x[1])}</span><span class="tx">${x[2]}</span></button></li>`).join('');
   $('flows').querySelectorAll('button').forEach(b=>b.onclick=()=>setFlow(+b.dataset.f));
   setFlow(flowOn);
+  onScroll();
 }
 function setFlow(i){
   flowOn=i;const x=FL[lang][i];
@@ -196,6 +200,7 @@ function setFlow(i){
 const DEF={iPlan:480,iDown:42,iCycle:30,iTotal:820,iScrap:14,iRework:22,iCostS:85,iCostR:25};
 const ids=Object.keys(DEF);
 function loadCalc(){ids.forEach(k=>$(k).value=DEF[k]);$('iCur').value='MXN'}
+let calcSeen=false;
 function calc(){
   const v={};ids.forEach(k=>v[k]=Math.max(0,parseFloat($(k).value)||0));
   const cur=$('iCur').value;$('cur1').textContent=$('cur2').textContent=cur;
@@ -213,7 +218,7 @@ function calc(){
   const lost=v.iDown+Math.max(run-(v.iCycle*v.iTotal/60),0);
   const c=2*Math.PI*50;
   $('rVal').setAttribute('stroke-dasharray',`${c*Math.min(oee,100)/100} ${c}`);
-  $('rTxt').textContent=nf(oee,1)+'%';
+  if(calcSeen)$('rTxt').textContent=nf(oee,1)+'%';else{$('rVal').setAttribute('stroke-dasharray',`0 ${c}`);$('rTxt').textContent='0%';window._oee=oee}
   [['A',A],['P',Pc],['Q',Q]].forEach(([k,x])=>{$('r'+k).textContent=nf(x*100,1)+'%';$('b'+k).style.setProperty('--w',(x*100)+'%')});
   $('rFtq').textContent=nf(ftq*100,1)+'%';
   $('rCopq').textContent=new Intl.NumberFormat(lang==='es'?'es-MX':'en-US',{style:'currency',currency:cur,currencyDisplay:'narrowSymbol',maximumFractionDigits:0}).format(copq);
@@ -242,11 +247,91 @@ $('form').addEventListener('submit',e=>{
   location.href=`mailto:contact@guvelsystems.com?subject=${encodeURIComponent(t('mSubj')+' '+sel.map(s=>s.replace('GUVEL ','')).join(', '))}&body=${encodeURIComponent(body)}`;
 });
 
+
+/* ---------- scroll dynamics ---------- */
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const ease=x=>1-Math.pow(1-x,3);
+const dyn=!reduce;
+const pinMQ=matchMedia('(min-width: 981px)');
+let pinOn=false,D=0,X0=0;
+document.documentElement.classList.toggle('dyn',dyn);
+document.documentElement.classList.toggle('no-dyn',!dyn);
+function measure(){
+  pinOn=dyn&&pinMQ.matches;
+  document.documentElement.classList.toggle('pin-on',pinOn);
+  const sec=$('sistemas'),tr=$('track');
+  if(pinOn){tr.style.transform='none';const sl=tr.querySelectorAll('.slide');X0=sl[0].offsetLeft+sl[0].offsetWidth/2;const XL=sl[sl.length-1].offsetLeft+sl[sl.length-1].offsetWidth/2;D=Math.max(XL-X0,0);sec.style.height=(innerHeight+D)+'px'}
+  else{sec.style.height='';tr.style.transform='';tr.querySelectorAll('.slide').forEach(s=>{s.style.transform='';s.style.opacity=''})}
+  onScroll();
+}
+function goSlide(i){
+  const sec=$('sistemas');const n=SYS.length;
+  if(!pinOn){$('p-'+SYS[i].id).scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});return}
+  const top=sec.getBoundingClientRect().top+scrollY;
+  scrollTo({top:top+D*(i/(n-1)),behavior:reduce?'auto':'smooth'});
+}
+let ticking=false;
+function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+function frame(){
+  ticking=false;const vh=innerHeight;
+  $('nav').classList.toggle('scrolled',scrollY>8);
+  const docH=document.documentElement.scrollHeight-vh;
+  $('navProg').style.transform=`scaleX(${docH>0?scrollY/docH:0})`;
+
+  /* statement scrub */
+  const sc=$('scrub'),ws=sc.querySelectorAll('.w');
+  if(ws.length){const r=sc.getBoundingClientRect();const p=dyn?clamp((vh*.82-r.top)/(r.height+vh*.35)):1;const k=Math.round(p*ws.length*1.05);ws.forEach((w,i)=>w.classList.toggle('on',i<k))}
+
+  /* horizontal systems */
+  if(pinOn){
+    const r=$('sistemas').getBoundingClientRect();const p=clamp(-r.top/Math.max(D,1));
+    const tr=$('track');tr.style.transform=`translate3d(${innerWidth/2-X0-p*D}px,0,0)`;
+    const slides=tr.querySelectorAll('.slide');const n=slides.length;const f=p*(n-1);
+    slides.forEach((s,i)=>{const d=Math.min(Math.abs(i-f),1.4);s.style.transform=`scale(${1-d*.07})`;s.style.opacity=(1-Math.min(d,1)*.5).toFixed(3)});
+    $('sysProg').querySelectorAll('li').forEach((li,i)=>{li.classList.toggle('on',Math.round(f)===i);li.querySelector('i').style.setProperty('--f',clamp(f-i+1).toFixed(3))});
+  }
+
+  /* ecosystem hex reveal + draw */
+  const eco=$('ecosistema'),er=eco.getBoundingClientRect();
+  if(dyn){
+    const p=clamp((vh*.95-er.top)/(vh*1.05));
+    if(p>=1||er.bottom<0){eco.style.clipPath='none'}else{
+      const w=er.width,h=er.height,cx=w/2,cy=clamp(vh*.5-er.top,130,h);
+      const Rr=90+Math.pow(p,1.7)*(Math.hypot(w,h)*1.1);const a=.866*Rr,b=.5*Rr;
+      eco.style.clipPath=`polygon(${cx}px ${cy-Rr}px,${cx+a}px ${cy-b}px,${cx+a}px ${cy+b}px,${cx}px ${cy+Rr}px,${cx-a}px ${cy+b}px,${cx-a}px ${cy-b}px)`;
+    }
+    const q=clamp((vh*.7-er.top)/(vh*.75));
+    const core=eco.querySelector('.core');if(core)core.classList.toggle('hide',q<.08);
+    const nodes=eco.querySelectorAll('.node');nodes.forEach((nd,i)=>nd.classList.toggle('hide',q<.15+i*.1));
+    eco.querySelectorAll('.draw').forEach((pth,i)=>{const s=.4+i*.1;const v=clamp((q-s)/.25);pth.style.strokeDasharray=`${v} 1`});
+    eco.querySelectorAll('.edge').forEach(e=>e.style.visibility=q>=.95?'visible':'hidden');
+    eco.querySelectorAll('.flows li').forEach((li,i)=>li.classList.toggle('hide',q<.3+i*.1));
+  }
+  $('nav').classList.toggle('dark',er.top<40&&er.bottom>40);
+  const q2=document.querySelector('.quote');if(q2&&dyn){const r=q2.getBoundingClientRect();const k=clamp((vh-r.top)/(vh+r.height));q2.querySelector('svg').style.transform=`translate(${(-k*40).toFixed(1)}px,${(-k*70).toFixed(1)}px) rotate(${(k*-12).toFixed(2)}deg)`}
+  /* rail */
+  const dark=er.top<vh/2&&er.bottom>vh/2;$('rail').classList.toggle('dark',dark);
+  let act='top';['sistemas','ecosistema','oee','contacto'].forEach(id=>{if($(id).getBoundingClientRect().top<vh*.5)act=id});
+  $('rail').querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.sec===act));
+
+  /* calculator reveal */
+  if(!calcSeen){const cr=$('oee').querySelector('.results').getBoundingClientRect();if(cr.top<vh*.8||!dyn){calcSeen=true;countUp()}}
+}
+function countUp(){
+  const target=window._oee||0,c=2*Math.PI*50,t1=performance.now();
+  if(!dyn){calc();return}
+  (function step(now){const k=ease(clamp((now-t1)/1100));$('rVal').setAttribute('stroke-dasharray',`${c*Math.min(target,100)/100*k} ${c}`);$('rTxt').textContent=nf(target*k,1)+'%';if(k<1)requestAnimationFrame(step);else calc()})(t1);
+}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('resize',()=>measure());
+pinMQ.addEventListener?.('change',measure);
+
 /* ---------- language ---------- */
 function applyLang(l){
   lang=l;document.documentElement.lang=l;
   document.querySelectorAll('[data-i18n]').forEach(el=>{const v=T[l][el.dataset.i18n];if(v!==undefined)el.textContent=v});
   document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+  const sc=$('scrub');sc.innerHTML=T[l].scrub.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
   buildDock();show(cur);buildProducts();buildMap();buildChecks();calc();
   try{localStorage.setItem('guvel-lang',l)}catch(e){}
 }
@@ -255,8 +340,8 @@ document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>applyLang(b.da
 /* ---------- nav ---------- */
 $('menuBtn').onclick=()=>{const o=$('navLinks').classList.toggle('open');$('menuBtn').setAttribute('aria-expanded',o)};
 $('navLinks').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{$('navLinks').classList.remove('open');$('menuBtn').setAttribute('aria-expanded',false)}));
-addEventListener('scroll',()=>$('nav').classList.toggle('scrolled',scrollY>8),{passive:true});
 $('yr').textContent=new Date().getFullYear();
 
-loadCalc();applyLang(lang);
+loadCalc();applyLang(lang);measure();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);
 if(reduce||matchMedia('(max-width: 640px)').matches)stopAuto();else timer=requestAnimationFrame(tick);

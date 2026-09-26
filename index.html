@@ -29,7 +29,7 @@
 <polygon style="fill:var(--m-so)" points="34,417 34,1176 400,1383 937,1072 836,1012 700,1091 449,947 448,654 346,714 346,1006 597,1150 398,1266 138,1118 136,358"/>
 </symbol></defs></svg>
 
-<header class="nav" id="nav">
+<header class="nav" id="nav"><span class="nav-prog" id="navProg"></span>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="GUVEL">
       <svg aria-hidden="true"><use href="#g"/></svg>
@@ -52,6 +52,13 @@
   </div>
 </header>
 
+<nav class="rail" id="rail" aria-label="Secciones">
+  <a href="#top" data-sec="top"><i></i><span data-i18n="rl0">Inicio</span></a>
+  <a href="#sistemas" data-sec="sistemas"><i></i><span data-i18n="nav1">Sistemas</span></a>
+  <a href="#ecosistema" data-sec="ecosistema"><i></i><span data-i18n="nav2">Ecosistema</span></a>
+  <a href="#oee" data-sec="oee"><i></i><span data-i18n="nav3">Calculadora OEE</span></a>
+  <a href="#contacto" data-sec="contacto"><i></i><span data-i18n="nav4">Contacto</span></a>
+</nav>
 <main id="top">
   <section class="hero">
     <div class="iso"></div>
@@ -72,21 +79,26 @@
     </div>
   </section>
 
-  <section class="trust">
+  <section class="statement" id="statement">
     <div class="wrap">
-      <p data-i18n="trustP">Diseñado para los equipos que sostienen la operación</p>
-      <ul><li data-i18n="tr1">Manufactura</li><li data-i18n="tr2">Calidad</li><li data-i18n="tr3">Ingeniería</li><li data-i18n="tr4">Metrología</li><li data-i18n="tr5">Mejora continua</li></ul>
+      <p class="scrub" id="scrub" data-i18n-scrub="scrub">GUVEL conecta la información de la planta, la calidad, los documentos, la metrología y los nuevos proyectos para que cada decisión parta de datos confiables.</p>
+      <div class="trust">
+        <p data-i18n="trustP">Diseñado para los equipos que sostienen la operación</p>
+        <ul><li data-i18n="tr1">Manufactura</li><li data-i18n="tr2">Calidad</li><li data-i18n="tr3">Ingeniería</li><li data-i18n="tr4">Metrología</li><li data-i18n="tr5">Mejora continua</li></ul>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="sistemas">
-    <div class="wrap">
-      <div class="head">
-        <h2 data-i18n="sysT">Cinco sistemas. Una sola fuente de información.</h2>
-        <p class="lede" data-i18n="sysP">Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.</p>
+  <section class="systems" id="sistemas">
+    <div class="sys-pin">
+      <div class="wrap sys-head">
+        <div>
+          <h2 data-i18n="sysT">Cinco sistemas. Una sola fuente de información.</h2>
+          <p class="lede" data-i18n="sysP">Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.</p>
+        </div>
+        <ol class="sys-prog" id="sysProg" aria-label="Sistemas"></ol>
       </div>
-      <div class="prod-top" id="prodTop"></div>
-      <div class="prod-bot" id="prodBot"></div>
+      <div class="track-wrap"><div class="track" id="track"></div></div>
     </div>
   </section>
 
