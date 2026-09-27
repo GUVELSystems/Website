@@ -69,3 +69,6 @@ Con dominio propio, cambia en `index.html` la etiqueta `og:image` a la URL compl
 - **Fondo del inicio:** una red hexagonal animada detrás del titular, con paralaje al mover el mouse y pequeños pulsos de luz que viajan por sus líneas, evocando el paso de información entre sistemas.
 - **Logo en "Ecosistema":** brillo pulsante continuo y anillos hexagonales que emanan del logo (efecto de transmisión de datos hacia los sistemas conectados).
 Ambas se desactivan automáticamente si el visitante tiene activada la opción de reducir movimiento.
+
+## Revisión de accesibilidad
+Se validó la paleta de marca contra el estándar WCAG AA (contraste 4.5:1) y se ajustó el tono gris terciario (`--faint`, usado en unidades de la calculadora, encabezados de tabla y textos pequeños) de `#7a889d` a `#626e7f` en modo claro, que no cumplía el mínimo. El resto de la paleta (texto principal, textos secundarios, botones sobre cian y textos sobre navy) ya cumplía sin cambios.
