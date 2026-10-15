@@ -1,6 +1,6 @@
 const T={
 es:{scrub:'GUVEL conecta la información de la planta, la calidad, los documentos, la metrología y los nuevos proyectos para que cada decisión parta de datos confiables.',rl0:'Inicio',nav1:'Sistemas',nav2:'Ecosistema',nav3:'Calculadora OEE',nav4:'Contacto',navCta:'Solicitar demo',
-heroT:'Sistemas Industriales que Impulsan la Tecnología en las Empresas',heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
+heroT:'Sistemas industriales que impulsan la tecnología en las empresas',heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
 trustP:'Diseñado para los equipos que sostienen la operación',tr1:'Manufactura',tr2:'Calidad',tr3:'Ingeniería',tr4:'Metrología',tr5:'Mejora continua',
 sysT:'Cinco sistemas. Una sola fuente de información.',sysP:'Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.',
 rel:'Disponible',dev:'En desarrollo',sample:'Datos de ejemplo',demo:'Solicitar demo',notify:'Avisarme del lanzamiento',explore:'Ver en vivo',
@@ -17,7 +17,7 @@ fName:'Nombre',fCo:'Empresa',fRole:'Puesto',fSys:'Sistemas de interés',fMsg:'Me
 eName:'Escribe tu nombre para preparar el correo.',eSys:'Elige al menos un sistema de interés.',mSubj:'GUVEL: interés en',mHello:'Hola equipo GUVEL,',mBody:'Me interesa conocer:',mFrom:'Nombre',mCo:'Empresa',mRole:'Puesto',
 ft:'Sistemas digitales prácticos para organizaciones industriales.',ftSys:'Sistemas',ftCo:'GUVEL',back:'Volver arriba'},
 en:{scrub:'GUVEL connects plant, quality, document, metrology and new project information so every decision starts from reliable data.',rl0:'Home',nav1:'Systems',nav2:'Ecosystem',nav3:'OEE calculator',nav4:'Contact',navCta:'Request a demo',
-heroT:'A system for every part of the industrial operation',heroP:'Five GUVEL systems that share the same information: plant performance, quality, documents, calibration and new product projects.',heroA:'Request a demo',heroB:'See the systems',
+heroT:'Industrial systems that drive technology in companies',heroP:'Five GUVEL systems that share the same information: plant performance, quality, documents, calibration and new product projects.',heroA:'Request a demo',heroB:'See the systems',
 trustP:'Designed for the teams that keep the operation running',tr1:'Manufacturing',tr2:'Quality',tr3:'Engineering',tr4:'Metrology',tr5:'Continuous improvement',
 sysT:'Five systems. One source of information.',sysP:'Two systems are available today and three are in development. Each one works on its own and becomes more useful when connected to the others.',
 rel:'Available',dev:'In development',sample:'Sample data',demo:'Request a demo',notify:'Notify me at launch',explore:'See it live',
