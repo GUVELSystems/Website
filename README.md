@@ -1,4 +1,4 @@
-# GUVEL — Smarter Industrial Systems (v4.0)
+# GUVEL — Smarter Industrial Systems (v4.1)
 
 Sitio estático, sin dependencias ni proceso de compilación. Listo para GitHub Pages.
 
@@ -72,3 +72,15 @@ Ambas se desactivan automáticamente si el visitante tiene activada la opción d
 
 ## Revisión de accesibilidad
 Se validó la paleta de marca contra el estándar WCAG AA (contraste 4.5:1) y se ajustó el tono gris terciario (`--faint`, usado en unidades de la calculadora, encabezados de tabla y textos pequeños) de `#7a889d` a `#626e7f` en modo claro, que no cumplía el mínimo. El resto de la paleta (texto principal, textos secundarios, botones sobre cian y textos sobre navy) ya cumplía sin cambios.
+
+## Si el sitio se ve mal después de publicar
+Casi siempre es una mezcla de archivos nuevos y viejos (caché o subida incompleta), no un error del diseño.
+
+1. **Verifica la versión.** Abre el sitio, pulsa F12, ve a la pestaña *Console* y escribe `GUVEL_VERSION`.
+   Debe responder `"4.1"`. Si responde `undefined` o da error, el navegador o Cloudflare están sirviendo un `app.js` viejo (o falta el archivo).
+2. **Purga la caché de Cloudflare:** panel de Cloudflare → *Caching* → *Configuration* → *Purge Everything*.
+   Después abre el sitio en una ventana privada o con Ctrl+Shift+R (Cmd+Shift+R en Mac).
+3. **Confirma que subiste TODO:** `index.html`, la carpeta `css/`, la carpeta `js/` y la carpeta `assets/` (más `.nojekyll`).
+   Si solo se reemplaza `index.html`, la página se ve sin estilos o con secciones vacías.
+4. **Cloudflare → Speed → Optimization:** desactiva *Rocket Loader* y *Auto Minify* para JavaScript y CSS si siguen los problemas.
+5. Cada archivo se pide con `?v=4.1`; al publicar una versión nueva cambia ese número en `index.html` y el navegador descargará los archivos nuevos.
