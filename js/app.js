@@ -1,7 +1,7 @@
-window.GUVEL_VERSION='4.1';
+window.GUVEL_VERSION='5.0';
 const T={
-es:{scrub:'GUVEL conecta la información de la planta, la calidad, los documentos, la metrología y los nuevos proyectos para que cada decisión parta de datos confiables.',rl0:'Inicio',nav1:'Sistemas',nav2:'Ecosistema',nav3:'Calculadora OEE',nav4:'Contacto',navCta:'Solicitar demo',
-heroT:'Un sistema para cada parte de la operación industrial',heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
+es:{heroT:"Sistemas industriales que impulsan la tecnología en las empresas",scrub:"GUVEL conecta la {planta}, la {calidad}, los {documentos}, la {metrología} y los {proyectos} para que cada [decisión] parta de <datos> <confiables>.",navEnt:"Enterprise",hxP:"Planta",hxQ:"Calidad",hxD:"Documentos",hxM:"Metrología",hxJ:"Proyectos",hxS:"Decisiones",hxC:"Datos confiables",entEye:"Enterprise",entT:"Nos adaptamos a las necesidades de tu empresa",entP:"Cada organización trabaja distinto. Con Enterprise configuramos los sistemas GUVEL según tus procesos, tu estructura y tu ritmo de implementación.",ep1:"A tu medida",ep1t:"Adaptamos flujos, formatos e indicadores a la forma en que ya trabajas.",ep2:"Para toda la organización",ep2t:"Varias plantas, áreas y equipos trabajando sobre la misma información.",ep3:"Por etapas",ep3t:"Empezamos por el sistema más urgente y sumamos los demás a tu ritmo.",ep4:"Conectado a lo que ya usas",ep4t:"Evaluamos la integración con las herramientas que tu equipo utiliza hoy.",cfgT:"Arma tu propuesta",cfgS1:"Sistemas que te interesan",cfgS2:"Qué necesitas adaptar",nd1:"Varias plantas",nd2:"Integraciones",nd3:"Personalización",nd4:"Capacitación",sumS1:"sistema",sumSn:"sistemas",sumN1:"adaptación",sumNn:"adaptaciones",cfgGo:"Solicitar propuesta Enterprise",entCheck:"Enterprise (a la medida)",mEntMsg:"Me interesa una propuesta Enterprise.",mEntSys:"Sistemas:",mEntNeeds:"Necesito adaptar:",fEmail:"Correo",fSend:"Enviar mensaje",fSending:"Enviando…",fHint:"Usaremos tus datos solo para responderte.",eName:"Escribe tu nombre.",eEmail:"Escribe un correo válido para poder responderte.",errSend:"No pudimos enviar tu mensaje. Inténtalo de nuevo o ",errMail:"ábrelo en tu correo",errMail2:".",sentT:"Mensaje enviado",sentP:"Gracias, {n}. Recibimos tu solicitud y te responderemos pronto.",sentAgain:"Enviar otro mensaje",rl0:'Inicio',nav1:'Sistemas',nav2:'Ecosistema',nav3:'Calculadora OEE',nav4:'Contacto',navCta:'Solicitar demo',
+heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
 trustP:'Diseñado para los equipos que sostienen la operación',tr1:'Manufactura',tr2:'Calidad',tr3:'Ingeniería',tr4:'Metrología',tr5:'Mejora continua',
 sysT:'Cinco sistemas. Una sola fuente de información.',sysP:'Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.',
 rel:'Disponible',dev:'En desarrollo',sample:'Datos de ejemplo',demo:'Solicitar demo',notify:'Avisarme del lanzamiento',explore:'Ver en vivo',
@@ -14,11 +14,11 @@ wPerf:'El desempeño supera 100%: revisa el ciclo ideal o las piezas producidas.
 whyT:'Hecho desde la planta, no desde una presentación',w1:'Práctico',w1t:'Cada pantalla parte de un flujo real: el arranque de turno, la auditoría, la revisión de un documento.',w2:'Conectado',w2t:'Un hallazgo, una acción y el documento que corrige comparten la misma trazabilidad.',w3:'Escalable',w3t:'Empieza con un sistema y agrega los demás cuando la organización lo necesite.',
 qt:'Crear sistemas útiles en el entorno real de trabajo, no solamente impresionantes en una presentación.',qc:'La dirección de GUVEL',
 ctT:'Conversemos sobre tu operación',ctP:'Cuéntanos qué sistemas te interesan. Para los disponibles preparamos una demostración con un escenario parecido al tuyo; para los que están en desarrollo, te avisamos en cuanto se lancen.',ctMail:'También puedes escribir directo a',
-fName:'Nombre',fCo:'Empresa',fRole:'Puesto',fSys:'Sistemas de interés',fMsg:'Mensaje',fSend:'Preparar correo',fHint:'Se abrirá tu aplicación de correo con el mensaje listo.',
-eName:'Escribe tu nombre para preparar el correo.',eSys:'Elige al menos un sistema de interés.',mSubj:'GUVEL: interés en',mHello:'Hola equipo GUVEL,',mBody:'Me interesa conocer:',mFrom:'Nombre',mCo:'Empresa',mRole:'Puesto',
+fName:'Nombre',fCo:'Empresa',fRole:'Puesto',fSys:'Sistemas de interés',fMsg:'Mensaje',
+eSys:'Elige al menos un sistema de interés.',mSubj:'GUVEL: interés en',mHello:'Hola equipo GUVEL,',mBody:'Me interesa conocer:',mFrom:'Nombre',mCo:'Empresa',mRole:'Puesto',
 ft:'Sistemas digitales prácticos para organizaciones industriales.',ftSys:'Sistemas',ftCo:'GUVEL',back:'Volver arriba'},
-en:{scrub:'GUVEL connects plant, quality, document, metrology and new project information so every decision starts from reliable data.',rl0:'Home',nav1:'Systems',nav2:'Ecosystem',nav3:'OEE calculator',nav4:'Contact',navCta:'Request a demo',
-heroT:'A system for every part of the industrial operation',heroP:'Five GUVEL systems that share the same information: plant performance, quality, documents, calibration and new product projects.',heroA:'Request a demo',heroB:'See the systems',
+en:{heroT:"Industrial systems that drive technology in companies",scrub:"GUVEL connects {plant}, {quality}, {documents}, {metrology} and {projects} so every [decision] starts from <reliable> <data>.",navEnt:"Enterprise",hxP:"Plant",hxQ:"Quality",hxD:"Documents",hxM:"Metrology",hxJ:"Projects",hxS:"Decisions",hxC:"Reliable data",entEye:"Enterprise",entT:"We adapt to your company’s needs",entP:"Every organization works differently. With Enterprise we configure GUVEL systems around your processes, your structure and your implementation pace.",ep1:"Built around you",ep1t:"We adapt workflows, forms and indicators to the way you already work.",ep2:"For the whole organization",ep2t:"Multiple plants, areas and teams working on the same information.",ep3:"In stages",ep3t:"We start with the most urgent system and add the rest at your pace.",ep4:"Connected to what you already use",ep4t:"We evaluate integration with the tools your team uses today.",cfgT:"Build your proposal",cfgS1:"Systems you are interested in",cfgS2:"What do you need to adapt",nd1:"Multiple plants",nd2:"Integrations",nd3:"Customization",nd4:"Training",sumS1:"system",sumSn:"systems",sumN1:"adaptation",sumNn:"adaptations",cfgGo:"Request an Enterprise proposal",entCheck:"Enterprise (tailored)",mEntMsg:"I am interested in an Enterprise proposal.",mEntSys:"Systems:",mEntNeeds:"I need to adapt:",fEmail:"Email",fSend:"Send message",fSending:"Sending…",fHint:"We will only use your details to reply to you.",eName:"Enter your name.",eEmail:"Enter a valid email so we can reply.",errSend:"We could not send your message. Try again or ",errMail:"open it in your email",errMail2:".",sentT:"Message sent",sentP:"Thank you, {n}. We received your request and will reply soon.",sentAgain:"Send another message",rl0:'Home',nav1:'Systems',nav2:'Ecosystem',nav3:'OEE calculator',nav4:'Contact',navCta:'Request a demo',
+heroP:'Five GUVEL systems that share the same information: plant performance, quality, documents, calibration and new product projects.',heroA:'Request a demo',heroB:'See the systems',
 trustP:'Designed for the teams that keep the operation running',tr1:'Manufacturing',tr2:'Quality',tr3:'Engineering',tr4:'Metrology',tr5:'Continuous improvement',
 sysT:'Five systems. One source of information.',sysP:'Two systems are available today and three are in development. Each one works on its own and becomes more useful when connected to the others.',
 rel:'Available',dev:'In development',sample:'Sample data',demo:'Request a demo',notify:'Notify me at launch',explore:'See it live',
@@ -31,8 +31,8 @@ wPerf:'Performance is above 100%: check the ideal cycle or parts produced.',wScr
 whyT:'Built from the plant floor, not from a slide deck',w1:'Practical',w1t:'Every screen starts from a real flow: shift start-up, the audit, a document review.',w2:'Connected',w2t:'A finding, an action and the document that fixes it share the same traceability.',w3:'Scalable',w3t:'Start with one system and add the others when the organization needs them.',
 qt:'Create systems that are useful in the real working environment, not only impressive in a presentation.',qc:'The GUVEL direction',
 ctT:'Let’s talk about your operation',ctP:'Tell us which systems interest you. For available ones we prepare a demo with a scenario close to yours; for those in development, we’ll let you know as soon as they launch.',ctMail:'You can also write directly to',
-fName:'Name',fCo:'Company',fRole:'Role',fSys:'Systems of interest',fMsg:'Message',fSend:'Prepare email',fHint:'Your email app will open with the message ready.',
-eName:'Enter your name to prepare the email.',eSys:'Choose at least one system of interest.',mSubj:'GUVEL: interest in',mHello:'Hello GUVEL team,',mBody:'I would like to learn about:',mFrom:'Name',mCo:'Company',mRole:'Role',
+fName:'Name',fCo:'Company',fRole:'Role',fSys:'Systems of interest',fMsg:'Message',
+eSys:'Choose at least one system of interest.',mSubj:'GUVEL: interest in',mHello:'Hello GUVEL team,',mBody:'I would like to learn about:',mFrom:'Name',mCo:'Company',mRole:'Role',
 ft:'Practical digital systems for industrial organizations.',ftSys:'Systems',ftCo:'GUVEL',back:'Back to top'}};
 
 const SYS=[
@@ -235,21 +235,72 @@ ids.concat('iCur').forEach(k=>$(k).addEventListener('input',calc));
 $('calcReset').onclick=()=>{loadCalc();calc()};
 
 /* ---------- form ---------- */
+/* Envío directo sin abrir el correo del visitante.
+   Servicio por defecto: FormSubmit (gratis, sin cuenta). La primera vez que se envía un mensaje,
+   FormSubmit manda un correo de activación a MAIL_TO: hay que confirmarlo una sola vez.
+   Para usar otro servicio (Formspree, Web3Forms, etc.) solo cambia FORM_ENDPOINT. */
+const MAIL_TO='contact@guvelsystems.com';
+const FORM_ENDPOINT='https://formsubmit.co/ajax/'+MAIL_TO;
+const sysName=id=>id==='ent'?t('entCheck'):SYS.find(s=>s.id===id).name;
 function buildChecks(){
   const on=[...document.querySelectorAll('#checks input:checked')].map(i=>i.value);
-  $('checks').innerHTML=SYS.map(s=>`<label><input type="checkbox" value="${s.id}" ${on.includes(s.id)?'checked':''}>${s.name.replace('GUVEL ','')}</label>`).join('');
+  const row=(id,label)=>`<label><input type="checkbox" value="${id}" ${on.includes(id)?'checked':''}>${label}</label>`;
+  $('checks').innerHTML=SYS.map(s=>row(s.id,s.name.replace('GUVEL ',''))).join('')+row('ent',t('entCheck'));
 }
 function pick(id){const i=document.querySelector(`#checks input[value="${id}"]`);if(i)i.checked=true}
-$('form').addEventListener('submit',e=>{
+function fillMsg(text){
+  const m=$('fMsg');
+  if(!m.value.trim()||m.dataset.auto==='1'){m.value=text;m.dataset.auto='1'}
+  else if(!m.value.includes(text)){m.value=m.value.trim()+'\n\n'+text}
+}
+$('fMsg').addEventListener('input',()=>{$('fMsg').dataset.auto='0'});
+function mailtoHref(d){
+  const body=[t('mHello'),'',t('mBody'),...d.sel.map(x=>'- '+x),'',d.message,'',`${t('mFrom')}: ${d.name}`,d.company?`${t('mCo')}: ${d.company}`:'',d.role?`${t('mRole')}: ${d.role}`:''].filter((l,i,a)=>!(l===''&&a[i-1]==='')).join('\n');
+  return `mailto:${MAIL_TO}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(body)}`;
+}
+function formErr(msg,d){
+  const e=$('fErr');e.textContent=msg;
+  if(d){const a=document.createElement('a');a.className='errlink';a.href=mailtoHref(d);a.textContent=t('errMail');e.append(a,t('errMail2'))}
+}
+function setBusy(b){
+  $('form').classList.toggle('busy',b);$('fBtn').disabled=b;
+  $('fBtn').textContent=b?t('fSending'):t('fSend');
+}
+function showSent(name){
+  $('sentP').textContent=t('sentP').replace('{n}',name);
+  $('form').hidden=true;$('sent').hidden=false;
+  $('sent').scrollIntoView({block:'nearest',behavior:reduce?'auto':'smooth'});
+}
+$('sentAgain').onclick=()=>{
+  $('form').reset();$('fMsg').dataset.auto='0';buildChecks();
+  $('sent').hidden=true;$('form').hidden=false;$('fName').focus();
+};
+$('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const name=$('fName').value.trim();const sel=[...document.querySelectorAll('#checks input:checked')].map(i=>SYS.find(s=>s.id===i.value).name);
-  if(!name){$('fErr').textContent=t('eName');$('fName').focus();return}
-  if(!sel.length){$('fErr').textContent=t('eSys');return}
+  if($('form').classList.contains('busy'))return;
+  const name=$('fName').value.trim(),email=$('fEmail').value.trim();
+  const ids=[...document.querySelectorAll('#checks input:checked')].map(i=>i.value);
   $('fErr').textContent='';
-  const body=[t('mHello'),'',t('mBody'),...sel.map(s=>'- '+s),'',$('fMsg').value.trim(),'',`${t('mFrom')}: ${name}`,$('fCo').value.trim()?`${t('mCo')}: ${$('fCo').value.trim()}`:'',$('fRole').value.trim()?`${t('mRole')}: ${$('fRole').value.trim()}`:''].filter((l,i,a)=>!(l===''&&a[i-1]==='')).join('\n');
-  location.href=`mailto:contact@guvelsystems.com?subject=${encodeURIComponent(t('mSubj')+' '+sel.map(s=>s.replace('GUVEL ','')).join(', '))}&body=${encodeURIComponent(body)}`;
+  if(!name){formErr(t('eName'));$('fName').focus();return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){formErr(t('eEmail'));$('fEmail').focus();return}
+  if(!ids.length){formErr(t('eSys'));return}
+  const sel=ids.map(sysName);
+  const d={name,email,company:$('fCo').value.trim(),role:$('fRole').value.trim(),message:$('fMsg').value.trim(),sel,
+    subject:t('mSubj')+' '+sel.map(x=>x.replace('GUVEL ','')).join(', ')};
+  if($('fHoney').value){showSent(name);return}           /* campo trampa: bots */
+  setBusy(true);
+  try{
+    const ctl=new AbortController(),to=setTimeout(()=>ctl.abort(),15000);
+    const r=await fetch(FORM_ENDPOINT,{method:'POST',signal:ctl.signal,headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name:d.name,email:d.email,company:d.company,role:d.role,systems:sel.join(', '),message:d.message,language:lang,
+        _subject:d.subject,_template:'table',_captcha:'false'})});
+    clearTimeout(to);
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.success===false||j.success==='false')throw new Error('send');
+    showSent(name);
+  }catch(err){formErr(t('errSend'),d)}
+  finally{setBusy(false)}
 });
-
 
 /* ---------- hero hex network ---------- */
 function initHeroFx(){
@@ -370,9 +421,9 @@ function frame(){
   const docH=document.documentElement.scrollHeight-vh;
   $('navProg').style.transform=`scaleX(${docH>0?scrollY/docH:0})`;
 
-  /* statement scrub */
-  const sc=$('scrub'),ws=sc.querySelectorAll('.w');
-  if(ws.length){const r=sc.getBoundingClientRect();const p=dyn?clamp((vh*.82-r.top)/(r.height+vh*.35)):1;const k=Math.round(p*ws.length*1.05);ws.forEach((w,i)=>w.classList.toggle('on',i<k))}
+  /* statement: convergence */
+  const cv=$('conv');
+  if(cv){const r=cv.getBoundingClientRect();renderConv(dyn?clamp((vh*.88-r.top)/(vh*.55+r.height*.45)):1)}
 
   /* horizontal systems */
   if(pinOn){
@@ -400,11 +451,12 @@ function frame(){
     eco.querySelectorAll('.edge').forEach(e=>e.style.visibility=q>=.95?'visible':'hidden');
     eco.querySelectorAll('.flows li').forEach((li,i)=>li.classList.toggle('hide',q<.3+i*.1));
   }
-  $('nav').classList.toggle('dark',er.top<40&&er.bottom>40);
+  const darkSecs=[$('ecosistema'),$('enterprise')];
+  $('nav').classList.toggle('dark',darkSecs.some(x=>{const r=x.getBoundingClientRect();return r.top<40&&r.bottom>40}));
   const q2=document.querySelector('.quote');if(q2&&dyn){const r=q2.getBoundingClientRect();const k=clamp((vh-r.top)/(vh+r.height));q2.querySelector('svg').style.transform=`translate(${(-k*40).toFixed(1)}px,${(-k*70).toFixed(1)}px) rotate(${(k*-12).toFixed(2)}deg)`}
   /* rail */
-  const dark=er.top<vh/2&&er.bottom>vh/2;$('rail').classList.toggle('dark',dark);
-  let act='top';['sistemas','ecosistema','oee','contacto'].forEach(id=>{if($(id).getBoundingClientRect().top<vh*.5)act=id});
+  $('rail').classList.toggle('dark',darkSecs.some(x=>{const r=x.getBoundingClientRect();return r.top<vh/2&&r.bottom>vh/2}));
+  let act='top';['sistemas','ecosistema','oee','enterprise','contacto'].forEach(id=>{if($(id).getBoundingClientRect().top<vh*.5)act=id});
   $('rail').querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.sec===act));
 
   /* calculator reveal */
@@ -419,12 +471,94 @@ addEventListener('scroll',onScroll,{passive:true});
 addEventListener('resize',()=>measure());
 pinMQ.addEventListener?.('change',measure);
 
+/* ---------- convergence (statement) ---------- */
+let cvWords=[],cvRing=[],cvCore=null,cvCoreWord=0,cvLastK=-1;
+function buildConv(){
+  let ki=0;
+  $('scrub').innerHTML=T[lang].scrub.split(' ').map(w=>{
+    const m=w.match(/^([{\[<])(.+?)([}\]>])(.*)$/);
+    if(!m)return `<span class="w">${w}</span>`;
+    const ty=m[1]==='{'?'src':m[1]==='['?'out':'core';
+    return `<span class="w k k-${ty}" data-ty="${ty}"><i class="hexi" aria-hidden="true"></i>${m[2]}${m[4]}</span>`;
+  }).join(' ');
+  const els=cvWords=[...$('scrub').querySelectorAll('.w')];
+  const idx=(ty,n)=>{let c=-1;for(let i=0;i<els.length;i++)if(els[i].dataset.ty===ty&&++c===n)return i;return 0};
+  const nCore=els.filter(e=>e.dataset.ty==='core').length;
+  const R=60,d=Math.sqrt(3)*R+34,ang=[240,300,0,60,120,180];
+  const lab=[t('hxP'),t('hxQ'),t('hxD'),t('hxM'),t('hxJ'),t('hxS')];
+  let lines='',pk='',hx='';
+  ang.forEach((a,i)=>{
+    const x=+(d*Math.cos(a*Math.PI/180)).toFixed(1),y=+(d*Math.sin(a*Math.PI/180)).toFixed(1),out=i===5;
+    const path=out?`M0 0 L${x} ${y}`:`M${x} ${y} L0 0`;
+    lines+=`<path class="cv-l" d="${path}"/><path class="cv-l draw" pathLength="1" data-i="${i}" d="${path}"/>`;
+    if(!reduce)pk+=`<circle class="cv-pk" data-i="${i}" r="3.4"><animateMotion dur="${(1.5+i*.17).toFixed(2)}s" repeatCount="indefinite" path="${path}"/></circle>`;
+    hx+=`<g class="cv-h${out?' out':''}" data-i="${i}"><polygon points="${hexPts(x,y,R)}"/><text x="${x}" y="${out?y+5:y-3}">${lab[i]}</text>${out?'':`<text class="sub" x="${x}" y="${y+15}">${SYS[i].short}</text>`}</g>`;
+  });
+  $('convViz').innerHTML=`<svg viewBox="-196 -186 392 372" focusable="false">${lines}${pk}${hx}
+    <g class="cv-core"><polygon points="${hexPts(0,0,R)}"/><svg x="-16" y="-38" width="32" height="37" viewBox="20 20 1356 1556" class="on-navy"><use href="#g"/></svg><text x="0" y="27">${t('hxC')}</text></g></svg>`;
+  const q=sel=>$('convViz').querySelector(sel);
+  cvRing=ang.map((a,i)=>({g:q(`.cv-h[data-i="${i}"]`),ln:q(`.draw[data-i="${i}"]`),pk:q(`.cv-pk[data-i="${i}"]`),
+    word:i<5?idx('src',i):idx('core',nCore-1)}));
+  cvCore=q('.cv-core');cvCoreWord=idx('core',0);cvLastK=-1;
+}
+function renderConv(p){
+  const N=cvWords.length,k=Math.ceil(p*N*1.05);
+  if(k===cvLastK)return;cvLastK=k;
+  cvWords.forEach((w,i)=>w.classList.toggle('on',i<k));
+  cvRing.forEach(h=>{const on=h.word<k;h.g.classList.toggle('on',on);if(h.ln)h.ln.classList.toggle('on',on);if(h.pk)h.pk.classList.toggle('on',on)});
+  if(cvCore)cvCore.classList.toggle('on',cvCoreWord<k);
+}
+
+/* ---------- Enterprise configurator ---------- */
+const NEEDS=['nd1','nd2','nd3','nd4'];
+const cfg={sys:new Set(),needs:new Set()};
+function cfgHexSvg(){
+  const R=24,w=Math.sqrt(3)*R+3,v=R*1.5+2;
+  const pos=[[-w,0],[0,0],[w,0],[-w/2,v],[w/2,v]];
+  return `<svg viewBox="-74 -30 148 98" focusable="false">${SYS.map((s,i)=>`<g class="pv${cfg.sys.has(s.id)?' on':''}" data-id="${s.id}"><polygon points="${hexPts(pos[i][0],pos[i][1],R)}"/><text x="${pos[i][0]}" y="${pos[i][1]+4}">${s.ab}</text></g>`).join('')}</svg>`;
+}
+function cfgSum(){
+  const a=cfg.sys.size,b=cfg.needs.size;
+  $('cfgSum').textContent=`${a} ${t(a===1?'sumS1':'sumSn')} · ${b} ${t(b===1?'sumN1':'sumNn')}`;
+}
+function cfgToggle(set,key,btn){
+  set.has(key)?set.delete(key):set.add(key);
+  btn.setAttribute('aria-pressed',set.has(key));
+  document.querySelectorAll('#cfgHex .pv').forEach(g=>g.classList.toggle('on',cfg.sys.has(g.dataset.id)));
+  cfgSum();
+}
+function buildCfg(){
+  $('cfgHex').innerHTML=cfgHexSvg();
+  $('cfgSys').innerHTML=SYS.map(s=>`<button type="button" aria-pressed="${cfg.sys.has(s.id)}" data-k="${s.id}"><i class="hexi" aria-hidden="true"></i>${s.short}</button>`).join('');
+  $('cfgNeeds').innerHTML=NEEDS.map(k=>`<button type="button" aria-pressed="${cfg.needs.has(k)}" data-k="${k}">${t(k)}</button>`).join('');
+  $('cfgSys').querySelectorAll('button').forEach(b=>b.onclick=()=>cfgToggle(cfg.sys,b.dataset.k,b));
+  $('cfgNeeds').querySelectorAll('button').forEach(b=>b.onclick=()=>cfgToggle(cfg.needs,b.dataset.k,b));
+  cfgSum();
+}
+$('cfgGo').onclick=()=>{
+  pick('ent');cfg.sys.forEach(id=>pick(id));
+  let msg=t('mEntMsg');
+  if(cfg.sys.size)msg+=' '+t('mEntSys')+' '+[...cfg.sys].map(id=>SYS.find(s=>s.id===id).short).join(', ')+'.';
+  if(cfg.needs.size)msg+=' '+t('mEntNeeds')+' '+[...cfg.needs].map(k=>t(k)).join(', ')+'.';
+  fillMsg(msg);
+  $('contacto').scrollIntoView({behavior:reduce?'auto':'smooth'});
+  setTimeout(()=>$('fName').focus({preventScroll:true}),reduce?0:800);
+};
+
+/* ---------- reveal on view ---------- */
+(function(){
+  const els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||reduce){els.forEach(e=>e.classList.add('in'));return}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  els.forEach(e=>io.observe(e));
+})();
+
 /* ---------- language ---------- */
 function applyLang(l){
   lang=l;document.documentElement.lang=l;
   document.querySelectorAll('[data-i18n]').forEach(el=>{const v=T[l][el.dataset.i18n];if(v!==undefined)el.textContent=v});
   document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
-  const sc=$('scrub');sc.innerHTML=T[l].scrub.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+  buildConv();buildCfg();
   buildDock();show(cur);buildProducts();buildMap();buildChecks();calc();
   try{localStorage.setItem('guvel-lang',l)}catch(e){}
 }

@@ -1,4 +1,4 @@
-# GUVEL — Smarter Industrial Systems (v4.1)
+# GUVEL — Smarter Industrial Systems (v5.0)
 
 Sitio estático, sin dependencias ni proceso de compilación. Listo para GitHub Pages.
 
@@ -77,10 +77,35 @@ Se validó la paleta de marca contra el estándar WCAG AA (contraste 4.5:1) y se
 Casi siempre es una mezcla de archivos nuevos y viejos (caché o subida incompleta), no un error del diseño.
 
 1. **Verifica la versión.** Abre el sitio, pulsa F12, ve a la pestaña *Console* y escribe `GUVEL_VERSION`.
-   Debe responder `"4.1"`. Si responde `undefined` o da error, el navegador o Cloudflare están sirviendo un `app.js` viejo (o falta el archivo).
+   Debe responder `"5.0"`. Si responde `undefined` o da error, el navegador o Cloudflare están sirviendo un `app.js` viejo (o falta el archivo).
 2. **Purga la caché de Cloudflare:** panel de Cloudflare → *Caching* → *Configuration* → *Purge Everything*.
    Después abre el sitio en una ventana privada o con Ctrl+Shift+R (Cmd+Shift+R en Mac).
 3. **Confirma que subiste TODO:** `index.html`, la carpeta `css/`, la carpeta `js/` y la carpeta `assets/` (más `.nojekyll`).
    Si solo se reemplaza `index.html`, la página se ve sin estilos o con secciones vacías.
 4. **Cloudflare → Speed → Optimization:** desactiva *Rocket Loader* y *Auto Minify* para JavaScript y CSS si siguen los problemas.
-5. Cada archivo se pide con `?v=4.1`; al publicar una versión nueva cambia ese número en `index.html` y el navegador descargará los archivos nuevos.
+5. Cada archivo se pide con `?v=5.0`; al publicar una versión nueva cambia ese número en `index.html` y el navegador descargará los archivos nuevos.
+
+## Formulario de contacto: envío automático
+El formulario ya **no abre el correo del visitante**: envía el mensaje directamente a `contact@guvelsystems.com`
+mediante FormSubmit (servicio gratuito, sin cuenta). Qué falta hacer, una sola vez:
+
+1. Publica el sitio y envía **un mensaje de prueba** desde el formulario real (`guvelsystems.com`).
+2. FormSubmit enviará un correo de **activación** a `contact@guvelsystems.com` (revisa también Spam). Abre el enlace y confirma.
+3. A partir de ahí, cada mensaje llega a esa bandeja como una tabla con nombre, correo (al responder le contestas directo al visitante), empresa, puesto, sistemas de interés y mensaje.
+
+Detalles:
+- Si el envío falla (sin internet, servicio caído), el visitante ve un aviso con un enlace "ábrelo en tu correo" que prepara el mensaje en su aplicación de correo.
+- Tiene un campo trampa invisible contra bots.
+- Para cambiar de servicio (Formspree, Web3Forms, un servidor propio) edita `FORM_ENDPOINT` en `js/app.js`, sección "form".
+- Los mensajes pasan por un tercero (FormSubmit). Si necesitas que no sea así, la alternativa es un pequeño servidor propio o una función de Cloudflare; dime y lo preparamos.
+
+## Sección Enterprise
+Está entre "Hecho desde la planta" y "Conversemos". El visitante arma su propuesta (sistemas + necesidades) y el botón
+lleva al formulario con esas opciones ya marcadas y un mensaje escrito.
+- Textos: `js/app.js`, claves `ent…`, `ep1…ep4`, `cfg…`, `nd1…nd4` en `T`.
+- Los cuatro bloques (A tu medida, Para toda la organización, Por etapas, Conectado a lo que ya usas) son texto propuesto: ajústalo a lo que GUVEL realmente ofrece.
+- Las cuatro necesidades del selector (`NEEDS` en `js/app.js`) también se pueden cambiar.
+
+## Bloque geométrico del inicio
+La frase "GUVEL conecta…" se ilumina palabra por palabra al bajar y enciende un panal de hexágonos (planta, calidad, documentos, metrología, proyectos → datos confiables → decisiones). El texto está en `scrub` dentro de `T`:
+`{palabra}` marca cada fuente de datos, `[palabra]` la decisión y `<palabra>` el centro.
