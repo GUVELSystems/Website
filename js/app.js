@@ -1,6 +1,6 @@
 const T={
 es:{scrub:'GUVEL conecta la información de la planta, la calidad, los documentos, la metrología y los nuevos proyectos para que cada decisión parta de datos confiables.',rl0:'Inicio',nav1:'Sistemas',nav2:'Ecosistema',nav3:'Calculadora OEE',nav4:'Contacto',navCta:'Solicitar demo',
-heroT:'Un sistema para cada parte de la operación industrial',heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
+heroT:'Sistemas Industriales que Impulsan la Tecnología en las Empresas',heroP:'Cinco sistemas GUVEL que comparten la misma información: desempeño de planta, calidad, documentos, calibración y proyectos de nuevos productos.',heroA:'Solicitar una demostración',heroB:'Ver los sistemas',
 trustP:'Diseñado para los equipos que sostienen la operación',tr1:'Manufactura',tr2:'Calidad',tr3:'Ingeniería',tr4:'Metrología',tr5:'Mejora continua',
 sysT:'Cinco sistemas. Una sola fuente de información.',sysP:'Dos sistemas ya están disponibles y tres están en desarrollo. Cada uno funciona por sí solo y se vuelve más útil cuando se conecta con los demás.',
 rel:'Disponible',dev:'En desarrollo',sample:'Datos de ejemplo',demo:'Solicitar demo',notify:'Avisarme del lanzamiento',explore:'Ver en vivo',
